@@ -19,6 +19,7 @@
 			register_activation_hook( __FILE__, array( 'GhostComparisonActivation', 'activate' ) );
 			// enqueue scripts
 			add_action( 'wp_enqueue_scripts', array($this, "enqueue_scripts") );
+            add_action( 'wp_enqueue_scripts', 'footer_js' );
 
 			// GET CLASS DESCRIPTIONS BY STATE && INDUSTRY
 			add_action( 'wp_ajax_get_ghost_class_descriptions', array($this,'get_class_descriptions') );
@@ -35,6 +36,8 @@
 			wp_enqueue_script('serialize-json',  plugin_dir_url(__FILE__).'lib/jquery.serializejson.min.js', array( 'jquery' ), null, true );
 		//  wp_enqueue_script('select2-js',  plugin_dir_url(__FILE__).'lib/select2/select2.min.js', array( 'jquery' ), null, true );
 		//  wp_enqueue_style('select2-css', plugin_dir_url(__FILE__) . 'lib/select2/select2.min.css', array(), null, 'all' );
+            
+           wp_enqueue_script( 'footer_js', '/wp-content/plugins/ghostcomparison/js/ghost-support.js', array(), null, true );
 
 			// include core JS file
 			$ghost_options = get_option('ghost_options');

@@ -2,6 +2,18 @@
 
 //.innerHTML = '<a id="updateRate" class="updateRate" href="#rate">View updated Rate</a>';
 
+var cssId = 'supportCss';  // you could encode the css path itself to generate id..
+if (!document.getElementById(cssId))
+{
+    var foot  = document.getElementsByTagName('footer')[0];
+    var link  = document.createElement('link');
+    link.id   = cssId;
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'http://dev.agencyexcel.com/wp-content/plugins/ghostcomparison/css/support.css';
+    link.media = 'all';
+    foot.appendChild(link);
+}
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click  ', function (e) {
