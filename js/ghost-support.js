@@ -1,6 +1,5 @@
 //setTimeout(function(){
 
-//.innerHTML = '<a id="updateRate" class="updateRate" href="#rate">View updated Rate</a>';
 //  window.addEventListener("load", function(event) {
       
     function addEventHandler(elem, eventType, handler) {
@@ -144,8 +143,9 @@
     addEventHandler(document, 'DOMContentLoaded', function() {
         addEventHandler(document.getElementById('gform_fields_52'), 'change', function() {
           setInterval( myValidateFunction, 500);
+        });
     });
-                        
+
     setInterval( myValidateFunction2, 500);
 
    function myValidateFunction2 () { 	
@@ -153,8 +153,9 @@
         if (typeof(inElgbl) != 'undefined' && inElgbl != null)
         { 
             document.getElementById('field_52_24').style.display = "none";
+            document.getElemebtById('field_52_44').innerHTML = '<a id="updateRate" class="updateRate" href="#rate">View updated Rate</a>';
         }	
-    };      
+    }
 		
     function addSelectors() {
         var op1 = document.getElementsByClassName("pay-plan")[0];
@@ -167,7 +168,7 @@
             op4.id="option4"
     //	var op5 = document.getElementsByClassName("pay-plan")[4];
     //		op5.id="option5"	
-    };
+    }
     //}, 500);
       
 //}, false);
