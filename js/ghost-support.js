@@ -141,7 +141,16 @@
     setInterval( addSelectors, 500);
 
     addEventHandler(document, 'DOMContentLoaded', function() {
-        addEventHandler(document.getElementById('gform_fields_52'), 'change', function() {
+        addEventHandler(document.getElementById('gform_fields_52'), 'change', 
+        
+//        function doubleCheckRate () { 
+//              var button = document.querySelector('#rate');
+//              var PayContent = document.querySelector('.payDetails');
+//              PayContent.style.display = "";
+//              button.innerHTML = "Hide Rate";
+//        }
+        
+        function() {
           setInterval( myValidateFunction, 500);
         });
     });
@@ -153,7 +162,7 @@
         if (typeof(inElgbl) != 'undefined' && inElgbl != null)
         { 
             document.getElementById('field_52_24').style.display = "none";
-            document.getElemebtById('field_52_44').innerHTML = '<a id="updateRate" class="updateRate" href="#rate">View updated Rate</a>';
+//            document.getElemebtById('field_52_44').innerHTML = '<a id="updateRate" class="updateRate" href="#rate">View updated Rate</a>';
         }	
     }
 		
