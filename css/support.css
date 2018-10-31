@@ -1,0 +1,46 @@
+#field_52_23,
+#field_52_23 h3 {
+    visibility: hidden
+}
+
+#field_52_116,
+#updateRate {
+    display: none
+}
+
+.updateRate {
+    top: <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"> </span>0;
+    position: fixed;
+    width: 20%;
+    right: 0;
+    z-index: 11111;
+    background: #354563
+}
+
+.updateRate:active,
+.updateRate:hover,
+.updateRate:link,
+.updateRate:visited {
+    color: #fff<span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"> </span>
+}
+
+#rate,
+.updateRate {
+    background: #354563;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px
+}
+
+#field_52_116 {
+    display: block;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: #2f5a7d;
+    padding: 1px;
+    color: #fff;
+    text-align: center
+}
