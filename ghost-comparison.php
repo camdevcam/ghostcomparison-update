@@ -34,20 +34,15 @@
 		public function enqueue_scripts(){
 			// include dependencies
 			wp_enqueue_script('serialize-json',  plugin_dir_url(__FILE__).'lib/jquery.serializejson.min.js', array( 'jquery' ), null, true );
-		//  wp_enqueue_script('select2-js',  plugin_dir_url(__FILE__).'lib/select2/select2.min.js', array( 'jquery' ), null, true );
-		//  wp_enqueue_style('select2-css', plugin_dir_url(__FILE__) . 'lib/select2/select2.min.css', array(), null, 'all' );
             
-           wp_enqueue_script( 'footer_js', '/wp-content/plugins/ghostcomparison/js/ghost-support.js', array(), null, true );
+            wp_enqueue_script( 'footer_js', '/wp-content/plugins/ghostcomparison/js/ghost-support.js', array(), null, true );
 
 			// include core JS file
 			$ghost_options = get_option('ghost_options');
 			wp_register_script('ghost-comparison-js', plugin_dir_url(__FILE__) . 'js/main.js', array( 'jquery', 'serialize-json' ), null, true );
             
-//            wp_register_script('ghost-support-js', plugin_dir_url(__FILE__) . 'js/ghost-support.js');
-            
 			wp_localize_script('ghost-comparison-js', 'gco', array('ajax_url' => admin_url('admin-ajax.php'),'ghost_options' => $ghost_options) );
 			wp_enqueue_script('ghost-comparison-js');
-//            wp_enqueue_script('ghost-support-js');
 		}
         
 

@@ -1,11 +1,11 @@
 #field_52_23,
 #field_52_23 h3 {
-    visibility: hidden
+    visibility: hidden;
 }
 
 #field_52_116,
 #updateRate {
-    display: none
+    display: none;
 }
 
 .updateRate {
@@ -14,7 +14,7 @@
     width: 20%;
     right: 0;
     z-index: 11111;
-    background: #354563
+    background: #354563;
 }
 
 .updateRate:active,
@@ -30,11 +30,11 @@
     color: #fff;
     cursor: pointer;
     text-align: center;
-    padding: 10px
+    padding: 10px;
 }
 
 #field_52_116 {
-    display: block;
+/*    display: block;*/
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -42,5 +42,5 @@
     background: #2f5a7d;
     padding: 1px;
     color: #fff;
-    text-align: center
+    text-align: center;
 }
