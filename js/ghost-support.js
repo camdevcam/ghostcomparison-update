@@ -162,7 +162,7 @@
         if (typeof(inElgbl) != 'undefined' && inElgbl != null)
         { 
             document.getElementById('field_52_24').style.display = "none";
-//            document.getElemebtById('field_52_44').innerHTML = '<a id="updateRate" class="updateRate" href="#rate">View updated Rate</a>';
+            document.getElementsByClassName('gsection_title').style.display = "none"; 
         }	
     }
 
