@@ -67,7 +67,7 @@
         var ClassDsc92 = document.getElementById('input_52_92').value;
 
         var ClassDscUpdate = document.getElementById('input_52_92').value = ClassDsc65;
-                
+
         if (value1 > 0 ) { 
             document.getElementById('field_52_116').style.display = "none";
 
@@ -92,70 +92,70 @@
             document.getElementById('pay-plans').style.display = "none";
         } else {
             document.getElementById('field_52_116').style.display = "none";
-        }
+        }        
+        ChngGo();
+        ChkAgain (); 
     });
       
-      
-            function myValidateFunction () { 
-                var value1 = document.getElementById('input_52_22').value;
-                var value2 = document.getElementById('input_52_100').value;
-                var value3 = document.getElementById('input_52_95').value;
-                // var value4 = document.getElementById('input_52_96').value;
-                document.getElementById('option4').style.display = "none"; 
-            //	document.getElementById('option5').style.display = "none"; 
+    function myValidateFunction () { 
+        var value1 = document.getElementById('input_52_22').value;
+        var value2 = document.getElementById('input_52_100').value;
+        var value3 = document.getElementById('input_52_95').value;
+        // var value4 = document.getElementById('input_52_96').value;
+        document.getElementById('option4').style.display = "none"; 
+    //	document.getElementById('option5').style.display = "none"; 
 
-                if (value1 > 0 ) { 
-                    document.getElementById('field_52_116').style.display = "none";
-                    document.getElementById('rate').style.display = "block";
-                    document.getElementById('pay-plans').style.display = "block";
+        if (value1 > 0 ) { 
+            document.getElementById('field_52_116').style.display = "none";
+            document.getElementById('rate').style.display = "block";
+            document.getElementById('pay-plans').style.display = "block";
 
-                  } else if (value1 == 0 ) { 
-                    document.getElementById('option1').style.display = "none";
-                  }
-                if (value2 > 0 ) { 
-                    document.getElementById('field_52_116').style.display = "none";
-                    document.getElementById('rate').style.display = "block";
-                    document.getElementById('pay-plans').style.display = "block";		
+          } else if (value1 == 0 ) { 
+            document.getElementById('option1').style.display = "none";
+          }
+        if (value2 > 0 ) { 
+            document.getElementById('field_52_116').style.display = "none";
+            document.getElementById('rate').style.display = "block";
+            document.getElementById('pay-plans').style.display = "block";		
+        } else if (value2 == 0 ) { 
+//            document.getElementById('option2').style.display = "none";
+        }
+        if (value3 > 0 ) { 
+            document.getElementById('field_52_116').style.display = "none";
+            document.getElementById('rate').style.display = "block";
+            document.getElementById('pay-plans').style.display = "block";
 
-                } else if (value2 == 0 ) { 
-                    document.getElementById('option2').style.display = "none";
-                }
-                if (value3 > 0 ) { 
-                    document.getElementById('field_52_116').style.display = "none";
-                    document.getElementById('rate').style.display = "block";
-                    document.getElementById('pay-plans').style.display = "block";
-
-                  } else if (value3 == 0 ) { 
-                    document.getElementById('option3').style.display = "none";
-                  }
-                if (value1 == 0 && value2 == 0 && value3 == 0 ) { 
-                    document.getElementById('field_52_116').style.display = "block";
-                    document.getElementById('rate').style.display = "none";
-                    document.getElementById('pay-plans').style.display = "none";
-                } else {
-                    document.getElementById('field_52_116').style.display = "none";
-                }
-            };	
-
+          } else if (value3 == 0 ) { 
+            document.getElementById('option3').style.display = "none";
+          }
+        if (value1 == 0 && value2 == 0 && value3 == 0 ) { 
+            document.getElementById('field_52_116').style.display = "block";
+            document.getElementById('rate').style.display = "none";
+            document.getElementById('pay-plans').style.display = "none";
+        } else {
+            document.getElementById('field_52_116').style.display = "none";
+        }
+    };	
 
     setInterval( addSelectors, 500);
 
-    addEventHandler(document, 'DOMContentLoaded', function() {
-        addEventHandler(document.getElementById('gform_fields_52'), 'change', 
-        
-//        function doubleCheckRate () { 
-//              var button = document.querySelector('#rate');
-//              var PayContent = document.querySelector('.payDetails');
-//              PayContent.style.display = "";
-//              button.innerHTML = "Hide Rate";
-//        }
-        
-        function() {
-          setInterval( myValidateFunction, 500);
-        });
-    });
+    function ChngGo (){
+         addEventHandler(document, 'DOMContentLoaded', function () {
+            addEventHandler(document.getElementById('gform_fields_52'), 'change', 
 
-    setInterval( myValidateFunction2, 500);
+            function() {
+              setInterval( myValidateFunction, 500);
+            });
+//            ChkAgain (); 
+        });   
+    }
+
+    setInterval( myValidateFunction2, 500);    
+    setInterval( PayBtns, 500);  
+
+    function ChkAgain (){
+        setInterval( myValidateFunction, 500);
+    }
 
    function myValidateFunction2 () { 	
         var inElgbl =  document.getElementById('field_52_116');
@@ -165,7 +165,20 @@
 //            document.getElemebtById('field_52_44').innerHTML = '<a id="updateRate" class="updateRate" href="#rate">View updated Rate</a>';
         }	
     }
-		
+
+    function PayBtns() { 
+        var classname = document.getElementsByClassName("pay-plan-button");
+
+        function chckPayClk() {
+          document.getElementById('field_52_110').style.display = "none";
+        }
+
+        for (var i = 0; i < classname.length; i++) {
+          classname[i].addEventListener('click', chckPayClk, false);
+        }
+    
+    }
+
     function addSelectors() {
         var op1 = document.getElementsByClassName("pay-plan")[0];
             op1.id="option1"
