@@ -5,6 +5,13 @@
 }
 */
 
+* {
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+}
+
 #field_52_116,
 #updateRate {
     display: none;

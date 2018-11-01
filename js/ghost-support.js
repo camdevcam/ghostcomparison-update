@@ -147,7 +147,7 @@
               setInterval( myValidateFunction, 500);
             });
 //            ChkAgain (); 
-        });   
+         });   
     }
 
     setInterval( myValidateFunction2, 500);    
@@ -171,6 +171,8 @@
 
         function chckPayClk() {
           document.getElementById('field_52_110').style.display = "none";
+          document.getElementById('gform_submit_button_52').style.display = "block";
+          ChngGo2();    
         }
 
         for (var i = 0; i < classname.length; i++) {
@@ -192,5 +194,20 @@
     //		op5.id="option5"	
     }
     //}, 500);
-      
+
+    function ChngGo2() { 
+        var timesClicked = 0;
+        document.querySelectorAll('#gform_fields_52')[0].addEventListener('click', function () {
+            timesClicked++;
+
+            if (timesClicked > 1) {    
+                    setTimeout(jumpRate, 2000);
+                    function jumpRate(){
+                        var top = document.getElementById("rate").offsetTop;
+                        window.scrollTo(1000, top);
+                    }
+                } 
+            });
+    }
+
 //}, false);
